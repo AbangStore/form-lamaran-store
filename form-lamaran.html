@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Form Lamaran Store</title>
+  <!-- Google Font Orbitron -->
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Orbitron', sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: black;
+      color: red;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    .form-container {
+      background-color: gray;
+      padding: 20px;
+      max-width: 600px;
+      width: 90%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    h2 {
+      text-align: center;
+      color: black;
+      font-size: 1.5em;
+    }
+
+    .logo {
+      display: block;
+      margin: 0 auto 20px;
+      max-width: 100px;
+      height: auto;
+    }
+
+    label {
+      display: block;
+      margin-top: 10px;
+      color: black;
+    }
+
+    input, textarea, select, button {
+      width: 100%;
+      margin-top: 5px;
+      margin-bottom: 15px;
+      padding: 10px;
+      font-family: 'Orbitron', sans-serif;
+      font-size: 14px;
+      box-sizing: border-box;
+      border-radius: 5px;
+    }
+
+    input::placeholder,
+    textarea::placeholder {
+      color: darkred;
+    }
+
+    button {
+      background-color: #4CAF50;
+      color: white;
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #45a049;
+    }
+
+    #status {
+      margin-top: 10px;
+      font-weight: bold;
+      color: black;
+      text-align: center;
+    }
+
+    .note {
+      margin-top: 20px;
+      padding: 15px;
+      background-color: #fff0f0;
+      color: red;
+      border-left: 4px solid red;
+      font-size: 13px;
+    }
+
+    /* Popup Discord Style */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .modal-content {
+      background-color: #2f3136;
+      color: white;
+      border-radius: 10px;
+      padding: 20px;
+      width: 80%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .modal-content h3 {
+      margin-bottom: 10px;
+    }
+
+    .modal-content p {
+      margin-bottom: 20px;
+    }
+
+    .modal-content .icon {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .close-btn {
+      background-color: #7289da;
+      color: white;
+      padding: 8px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      transition: background-color 0.3s ease;
+    }
+
+    .close-btn:hover {
+      background-color: #5e6d8b;
+    }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .form-container {
+        padding: 15px;
+      }
+
+      input, textarea, select, button {
+        font-size: 13px;
+      }
+
+      h2 {
+        font-size: 1.2em;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-container">
+    <!-- Logo Store -->
+    <img src="https://cdn.discordapp.com/attachments/1344574265290260520/1344574363495698532/discord_avatar1.gif?ex=68074775&is=6805f5f5&hm=ac8fcb146c26268065daaf26d37fa800fb7bbb4455fbbd3503f6aeffd25726aa&" alt="ABANG STORE Logo" class="logo">
+
+    <h2>Form Lamaran Store</h2>
+    <form id="lamaranForm">
+      <label>Nama Lengkap:</label>
+      <input type="text" name="namaLengkap" placeholder="Masukkan nama lengkap" required>
+
+      <label>Username Discord:</label>
+      <input type="text" name="usernameDiscord" placeholder="Contoh: abang#1234" required>
+
+      <label>Umur:</label>
+      <input type="number" name="umur" placeholder="Masukkan umur kamu" required>
+
+      <label>Kesibukan:</label>
+      <input type="text" name="kesibukan" placeholder="Contoh: Mahasiswa, kerja, dsb" required>
+
+      <label>Alamat Rumah:</label>
+      <input type="text" name="alamat" placeholder="Contoh: Jl. Mawar No. 123, Jakarta">
+
+      <label>Produk yang Dijual:</label>
+      <textarea name="produk" rows="3" placeholder="Contoh: Joki ML, Akun FF, Pulsa, dll" required></textarea>
+
+      <label>Apakah anda Ingin Bertanggung jawab Ketika Melakukan Kesalahan?</label>
+      <select name="tanggungJawab" required>
+        <option value="" disabled selected>Pilih jawaban</option>
+        <option value="Ya">Ya</option>
+        <option value="Tidak">Tidak</option>
+      </select>
+
+      <button type="submit">Kirim Lamaran</button>
+    </form>
+
+    <div class="note">
+      <strong>Note:</strong><br>
+      KAMI DARI PIHAK STAFF STORE HANYA INGIN MENCEGAH/MENGHINDARI DARIPADA PENIPUAN/SCAMMER YANG SERING TERJADI.<br>
+      KAMI HANYA INGIN KEPERCAYAAN DARI DIRI ANDA TERIMAKASIH.
+    </div>
+  </div>
+
+  <!-- Modal Discord Style -->
+  <div class="modal" id="statusModal">
+    <div class="modal-content">
+      <div class="icon" id="statusIcon"></div>
+      <h3 id="statusTitle"></h3>
+      <p id="statusMessage"></p>
+      <button class="close-btn" id="closeModal">Tutup</button>
+    </div>
+  </div>
+
+  <script>
+    const form = document.getElementById('lamaranForm');
+    const modal = document.getElementById('statusModal');
+    const statusIcon = document.getElementById('statusIcon');
+    const statusTitle = document.getElementById('statusTitle');
+    const statusMessage = document.getElementById('statusMessage');
+    const closeModal = document.getElementById('closeModal');
+
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+
+      const data = new FormData(form);
+
+      const embedPayload = {
+        embeds: [{
+          title: "📥 Pengajuan Lamaran Store",
+          color: 16777215,
+          thumbnail: {
+            url: "https://cdn.discordapp.com/attachments/1344574265290260520/1344574363495698532/discord_avatar1.gif?ex=68074775&is=6805f5f5&hm=ac8fcb146c26268065daaf26d37fa800fb7bbb4455fbbd3503f6aeffd25726aa&"
+          },
+          fields: [
+            { name: "Nama Lengkap", value: data.get('namaLengkap'), inline: false },
+            { name: "Username Discord", value: data.get('usernameDiscord'), inline: false },
+            { name: "Umur", value: data.get('umur'), inline: false },
+            { name: "Kesibukan", value: data.get('kesibukan'), inline: false },
+            { name: "Alamat Rumah", value: data.get('alamat') || "Tidak diisi", inline: false },
+            { name: "Produk yang Dijual", value: data.get('produk'), inline: false },
+            { name: "Tanggung Jawab", value: data.get('tanggungJawab'), inline: false }
+          ],
+          footer: {
+            text: "𝓐𝓑𝓐𝓝𝓖 𝓢𝓣𝓞𝓡𝓔『 GuaranteeD 』"
+          },
+          timestamp: new Date().toISOString()
+        }]
+      };
+
+      try {
+        const response = await fetch("https://discord.com/api/webhooks/1363874209234948247/zm7-COghER4vHl0uQg4LWxmuDdoWafOAuBNm74WaIJeSwtxTfSDXRWDoMGc-74OXEP4T", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(embedPayload)
+        });
+
+        if (response.ok) {
+          statusIcon.innerHTML = '<img src="https://cdn3.emoji.gg/emojis/4240-verified-green-animated.gif" alt="Verified" width="40" height="40">';
+          statusTitle.innerHTML = "Lamaran Berhasil Dikirim!";
+          statusMessage.innerHTML = "Terima kasih telah mengajukan lamaran. Kami akan segera menindaklanjutinya.";
+        } else {
+          statusIcon.innerHTML = '<img src="https://cdn.discordapp.com/attachments/1332310975197741107/1348128335556907049/mxcross.GIF?ex=6807af1a&is=68065d9a&hm=518fde274a6d79ee596d714a8c5fe06d4b5465524f3645998c2002031d516881&" alt="Failed" width="40" height="40">';
+          statusTitle.innerHTML = "Gagal Mengirim Lamaran";
+          statusMessage.innerHTML = "Terjadi kesalahan saat mengirim lamaran. Silakan coba lagi.";
+        }
+        modal.style.display = 'flex';
+      } catch (error) {
+        statusIcon.innerHTML = '<img src="https://cdn.discordapp.com/attachments/1332310975197741107/1348128335556907049/mxcross.GIF?ex=6807af1a&is=68065d9a&hm=518fde274a6d79ee596d714a8c5fe06d4b5465524f3645998c2002031d516881&" alt="Failed" width="40" height="40">';
+        statusTitle.innerHTML = "Error";
+        statusMessage.innerHTML = "Terjadi kesalahan. Silakan coba lagi.";
+        modal.style.display = 'flex';
+      }
+    });
+
+    closeModal.addEventListener('click', () => {
+      modal.style.display = 'none';
+    });
+  </script>
+
+</body>
+</html>
